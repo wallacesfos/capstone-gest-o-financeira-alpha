@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     //Login
     const signIn = (userData) => {
         axios
-          .post("https://hamburgueria-api-kenzie-academ.herokuapp.com/login", userData)
+          .post("https://alpha-api-capstone.herokuapp.com/login", userData)
           .then((response) => {
             //Token Putting without local storage
             localStorage.setItem("@token_burguer", response.data.accessToken);
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 
     //create account
     const signUp = (userData) => {
-        axios.post('https://hamburgueria-api-kenzie-academ.herokuapp.com/register', userData)
+        axios.post('https://alpha-api-capstone.herokuapp.com/register', userData)
         .then((response) => {
             //redirecting
             history.push('/login')
