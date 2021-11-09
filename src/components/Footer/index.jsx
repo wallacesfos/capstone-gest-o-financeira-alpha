@@ -6,12 +6,12 @@ import { RiBookletLine, RiCalendarLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="hidden">
+    <Container>
+      <LogoContainer className="hidden">
         <img src={LogoFooter} />
         <p>ALPHA TECNOLOGIA E FINANÇAS</p>
-      </div>
-      <ul className="hiddenList">
+      </LogoContainer>
+      <ListContainer className="hiddenList">
         <li>
           <FaMoneyBillWave className="icon" />
           <p className="hidden">Finanças</p>
@@ -28,9 +28,9 @@ const Footer = () => {
           <RiCalendarLine className="icon" />
           <p className="hidden">Anual</p>
         </li>
-      </ul>
+      </ListContainer>
       <p className="hidden">Termos de uso</p>
-    </div>
+    </Container>
   );
 };
 
