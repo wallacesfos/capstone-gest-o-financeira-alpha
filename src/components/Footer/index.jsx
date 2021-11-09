@@ -1,5 +1,5 @@
 import { Container, ListContainer, LogoContainer } from "./styles";
-import LogoFooter from "../../assets/logo_footer.png";
+import LogoFooter from "../../Assets/logo_footer.png";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { IoMdAnalytics } from "react-icons/io";
 import { RiBookletLine, RiCalendarLine } from "react-icons/ri";
@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <Container>
       <LogoContainer className="hidden">
-        <img src={LogoFooter} />
+        <img src={LogoFooter} alt="logo-Alpha"/>
         <p>ALPHA TECNOLOGIA E FINANÇAS</p>
       </LogoContainer>
       <ListContainer className="hiddenList">

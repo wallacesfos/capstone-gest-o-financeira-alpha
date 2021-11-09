@@ -1,8 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
-import { useHistory } from 'react-router-dom'
-
+import toast from 'react-hot-toast';
+import { useHistory } from "react-router-dom";
 
 export const AuthContext = createContext({});
 
@@ -10,10 +9,10 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     
-    const history = useHistory();
+    const history = useHistory()
 
     const [authToken, setAuthToken] = useState(
-        () => localStorage.getItem("token") || ""
+        () => localStorage.getItem("@token_alpha") || ""
     );
 
     //Login
@@ -22,14 +21,14 @@ export const AuthProvider = ({ children }) => {
           .post("https://alpha-api-capstone.herokuapp.com/login", userData)
           .then((response) => {
             //Token Putting without local storage
-            localStorage.setItem("@token_burguer", response.data.accessToken);
-
-            //Setting token in AuthToken
-
-            setAuthToken(response.data.token);
+            localStorage.setItem("@token_alpha", response.data.accessToken);
 
             //Redirecting
             history.push('/dashboard')
+
+            //Setting token in AuthToken
+            setAuthToken(response.data.token);
+
           })
           .catch(() => {
                 //mensage error
@@ -37,12 +36,13 @@ export const AuthProvider = ({ children }) => {
             });
     };
 
+
     //create account
     const signUp = (userData) => {
         axios.post('https://alpha-api-capstone.herokuapp.com/register', userData)
         .then((response) => {
             //redirecting
-            history.push('/login')
+            history.push('/')
             //mensage success
             toast.success("Conta criada com sucesso!")
         })
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
         setAuthToken("");
 
         // Redirecting for login
-        history.push("/login");
+        history.push("/");
     };
 
     return (
