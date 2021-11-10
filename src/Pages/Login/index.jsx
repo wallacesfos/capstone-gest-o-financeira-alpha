@@ -7,12 +7,15 @@ import {AuthContext} from '../../Providers/Auth'
 import { Toaster } from 'react-hot-toast';
 import { TextField } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import { useHistory } from 'react-router';
 
 
 
 
 
 export default function Login(){
+
+    const history = useHistory();
 
     const {signIn} = useContext(AuthContext)
 
@@ -85,7 +88,7 @@ export default function Login(){
                 </LoginForm>
 
                 <button className="btn-primary" onClick={handleClick}>Entrar</button>
-                <Paragrafo>Não é cadastrado? Cadastre-se</Paragrafo>
+                <Paragrafo onClick={() => history.push('/register')}>Não é cadastrado? Cadastre-se</Paragrafo>
             </SigninDiv>
         </Container>
     )
