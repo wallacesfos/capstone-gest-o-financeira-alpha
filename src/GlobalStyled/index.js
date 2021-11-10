@@ -96,6 +96,14 @@ const GlobalStyled = createGlobalStyle`
         width: 100%;
         justify-content: center;
     }
+
+    .padlock{
+        height: 28px;
+    }
+
+    .pointer{
+        cursor: pointer;
+    }
 `;
 
 export default GlobalStyled;

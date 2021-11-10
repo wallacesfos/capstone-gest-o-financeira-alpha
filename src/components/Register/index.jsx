@@ -2,10 +2,17 @@ import { useForm } from 'react-hook-form';
 import {yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup";
 import { TextField } from "@material-ui/core"
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 import { useContext } from 'react';
 import {AuthContext} from '../../Providers/Auth'
 import { Toaster } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
+import Person from '../../Assets/Icons/Person.png'
+import Email from '../../Assets/Icons/Email.png'
+import Padlock from '../../Assets/Icons/Padlock.png'
+
+
 
 
 export default function Register(){
@@ -46,6 +53,13 @@ export default function Register(){
                 error={!!errors.name}
                 helperText={errors.name?.message}
                 className="inputs-register"
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                          <img src={Person} alt="person" />
+                      </InputAdornment>
+                    ),
+                  }}
 
                 />
             </div>
@@ -62,6 +76,13 @@ export default function Register(){
                 error={!!errors.email}
                 helperText={errors.email?.message}
                 className="inputs-register"
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                          <img src={Email} alt="person" />
+                      </InputAdornment>
+                    ),
+                }}
 
                 />
             </div>
@@ -80,6 +101,14 @@ export default function Register(){
                 helperText={errors.password?.message}
                 className="inputs-register"
 
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                          <img src={Padlock} alt="person" className="padlock"/>
+                      </InputAdornment>
+                    ),
+                }}
+
                 />
             </div>
             <div className="divTexts">
@@ -95,11 +124,19 @@ export default function Register(){
                 error={!!errors.passwordConfirmation}
                 helperText={errors.passwordConfirmation?.message}
                 className="inputs-register"
+                
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                          <img src={Padlock} alt="person" className="padlock"/>
+                      </InputAdornment>
+                    ),
+                }}
                 />
             </div>
 
             <button className="btn-primary" type="submit">Registrar</button>
-            <p className="text-primary" onClick={() => history.push('/')}>Já é cadastrado? Faça Login</p>
+            <p className="text-primary pointer" onClick={() => history.push('/')}>Já é cadastrado? Faça Login</p>
         </form>
     )
 }
