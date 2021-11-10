@@ -27,12 +27,7 @@ export default function Register(){
             password: data.password,
             name: data.name,
         }
-
         signUp(formData)
-    }
-
-    function move(param){
-        history.push(param)
     }
 
     return(
@@ -104,7 +99,7 @@ export default function Register(){
             </div>
 
             <button className="btn-primary" type="submit">Registrar</button>
-            <p className="text-primary" onClick={() => move('/')}>Já é cadastrado? Faça Login</p>
+            <p className="text-primary" onClick={() => history.push('/')}>Já é cadastrado? Faça Login</p>
         </form>
     )
 }
