@@ -7,6 +7,7 @@ const GlobalStyled = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        font-family: Arial, heveltica, sans-serif;
     }
 
     :root{
@@ -39,25 +40,16 @@ const GlobalStyled = createGlobalStyle`
         cursor: pointer;
     }
 
-    .input-primary{
-        border: 0;
-        background-color: transparent;
-        color: #c1c1c1;
+    .form{
         width: 100%;
-        height: 25px;
-        font-family: Arial, heveltica, sans-serif;
-    }
-    
-    .input-primary-div{
-        border-bottom: 1px solid white;
         display: flex;
-        align-items: flex-end;
-        width: 70%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-
 
     .btn-primary{
-        width: 70%;
+        width: 60%;
         height: 62px;
         background: #19A19C;
         border: 0;
@@ -65,12 +57,45 @@ const GlobalStyled = createGlobalStyle`
         color: white;
         font-size: 30px;
         font-family: arial;
+        margin: 20px 0 20px 0;
     }
 
     .btn-primary:hover{
         background: #19A18F;
     }
 
+    .text-primary{
+        color: #19A18F;
+        font-size: 15px;
+    }
+    
+    .inputs-register{
+        width: 60% !important;
+    }
+
+    .inputs-register label{
+        color: #c1c1c1 !important;
+    }
+    
+    .inputs-register div input{
+        color: #c1c1c1 !important;
+    }
+
+    .MuiInput-underline:before{
+        border-bottom: 1px solid #C1C1C1 !important;
+    }
+
+    .MuiInput-underline:after{
+        border-bottom: 1px solid white !important;
+
+    }
+
+    .divTexts{
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: center;
+    }
 `;
 
 export default GlobalStyled;

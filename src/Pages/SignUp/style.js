@@ -39,11 +39,11 @@ export const SigninDiv = styled.div`
     }
 `
 
-export const LoginForm = styled.div`
-    margin: 50px 0 50px 0;
+export const RegisterForm = styled.div`
+    margin: 50px 0 2px 0;
     display: flex;
     flex-direction: column;
-    height: 120px;
+    height: 330px;
     justify-content: space-between;
     width: 100%;
     align-items: center;
