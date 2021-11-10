@@ -7,6 +7,7 @@ const GlobalStyled = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        fonte-family: Arial, heveltica, sans-serif;
     }
 
     :root{
@@ -71,6 +72,39 @@ const GlobalStyled = createGlobalStyle`
         background: #19A18F;
     }
 
+    .text-primary{
+        color: #19A18F;
+        font-size: 15px;
+    }
+    
+    .inputs-register{
+        width: 60% !important;
+    }
+    .inputs-register label{
+        color: #c1c1c1 !important;
+    }
+    
+    .inputs-register div input{
+        color: #c1c1c1 !important;
+    }
+    .MuiInput-underline:before{
+        border-bottom: 1px solid #C1C1C1 !important;
+    }
+    .MuiInput-underline:after{
+        border-bottom: 1px solid white !important;
+    }
+    .divTexts{
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: center;
+    }
+    .padlock{
+        height: 28px;
+    }
+    .pointer{
+        cursor: pointer;
+    }
 `;
 
 export default GlobalStyled;

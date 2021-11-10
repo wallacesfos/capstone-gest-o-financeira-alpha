@@ -5,6 +5,9 @@ import Padlock from '../../Assets/Icons/Padlock.png'
 import { useContext, useState } from 'react';
 import {AuthContext} from '../../Providers/Auth'
 import { Toaster } from 'react-hot-toast';
+import { TextField } from '@material-ui/core';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 
 
 
@@ -36,14 +39,48 @@ export default function Login(){
                 <Image src={AlphaImage} alt="Icon Alpha" />
 
                 <LoginForm>
-                    <div className="input-primary-div">
-                        <img src={Person} alt="person" className="input-primary-image"/>
-                        <input required className="input-primary" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
+                    <div className="divTexts">
+                        <TextField 
+                        required
+                        id="outlined-required"
+                        variant="standard"
+                        size="small"
+                        color="primary"
+                        margin="normal"
+                        label="Email"
+                        className="inputs-register"
+                        onChange={(e) => setEmail(e.target.value)}
+                        InputProps={{
+                            startAdornment: (
+                            <InputAdornment position="start">
+                                <img src={Person} alt="person" />
+                            </InputAdornment>
+                            ),
+                        }}
+
+                        />
                     </div>
 
-                    <div className="input-primary-div">
-                        <img src={Padlock} alt="person" className="input-primary-image"/>
-                        <input required className="input-primary" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
+                    <div className="divTexts">
+                        <TextField 
+                        required
+                        id="outlined-required"
+                        variant="standard"
+                        size="small"
+                        color="primary"
+                        margin="normal"
+                        label="Senha"
+                        type="password"
+                        className="inputs-register"
+                        onChange={(e) => setSenha(e.target.value)}
+                        InputProps={{
+                            startAdornment: (
+                            <InputAdornment position="start">
+                                <img src={Padlock} alt="person" className="padlock"/>
+                            </InputAdornment>
+                            ),
+                        }}
+                        />
                     </div>
                 </LoginForm>
 
