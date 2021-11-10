@@ -10,45 +10,50 @@ export const HeaderContainer = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-height: 85px;
   }
 
   .MuiAppBar-colorPrimary {
     background-color: var(--darkDesaturatedBlue);
   }
 
-
-  svg {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: var(--black);
+  img {
+    width: 4.5rem;
+    height: 4.5rem;
+    color: var(--gray);
   }
 
-  h6 {
+  .icon {
+    font-size: 20px;
+    margin: 0 7px;
+    color: var(--gray);
+  }
+
+  .icon-menu {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
     cursor: pointer;
     font-size: 1rem;
-    color: var(--black);
+    color: var(--gray);
   }
 
-  @media (min-width: 425px) {
-    h6 {
-      margin-left: 1.5rem;
-      font-size: 1rem;
-    }
-  }
-
-  @media (min-width: 880px) {
-    .MuiButton-containedPrimary {
-      display: block;
-    }
-
-    h6 {
-      margin-left: 3rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     .MenuMobile {
       display: none;
+    }
+
+    .icon-menu {
+      width: 2.6rem;
+      height: 2.6rem;
     }
 
     h6 {
@@ -57,6 +62,13 @@ export const HeaderContainer = styled.section`
   }
 
   @media (min-width: 1440px) {
+    svg {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
+    
+
     h6 {
       margin-left: 12rem;
     }
@@ -77,11 +89,10 @@ export const LinksContainer = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  @media (min-width: 900px) {
+  @media (min-width: 910px) {
     display: flex;
   }
 `;
-
 
 export const UserIconContainer = styled.div`
   width: 50vw;
@@ -91,11 +102,17 @@ export const UserIconContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  p{
-      margin-right: 16px;
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: var(--gray);
   }
 
-  @media (min-width: 768px) {
+  p {
+    margin-right: 16px;
+  }
+
+  @media (min-width: 900px) {
     display: flex;
   }
 `;

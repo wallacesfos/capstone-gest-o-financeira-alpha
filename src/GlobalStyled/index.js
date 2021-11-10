@@ -39,6 +39,38 @@ const GlobalStyled = createGlobalStyle`
         cursor: pointer;
     }
 
+    .input-primary{
+        border: 0;
+        background-color: transparent;
+        color: #c1c1c1;
+        width: 100%;
+        height: 25px;
+        font-family: Arial, heveltica, sans-serif;
+    }
+    
+    .input-primary-div{
+        border-bottom: 1px solid white;
+        display: flex;
+        align-items: flex-end;
+        width: 70%;
+    }
+
+
+    .btn-primary{
+        width: 70%;
+        height: 62px;
+        background: #19A19C;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        font-size: 30px;
+        font-family: arial;
+    }
+
+    .btn-primary:hover{
+        background: #19A18F;
+    }
+
 `;
 
 export default GlobalStyled;
