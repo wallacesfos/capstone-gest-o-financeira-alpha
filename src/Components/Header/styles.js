@@ -13,7 +13,7 @@ export const HeaderContainer = styled.section`
   }
 
   .MuiAppBar-colorPrimary {
-    background-color: var(--background);
+    background-color: var(--darkDesaturatedBlue);
   }
 
 
