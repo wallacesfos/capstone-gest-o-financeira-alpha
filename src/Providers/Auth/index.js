@@ -42,11 +42,11 @@ export const AuthProvider = ({ children }) => {
         axios.post('https://alpha-api-capstone.herokuapp.com/register', userData)
         .then((response) => {
             //redirecting
-            history.push('/')
             //mensage success
             toast.success("Conta criada com sucesso!")
         })
-        .catch(() => {
+        .catch((response) => {
+            console.log(response)
             //mensage error
             toast.error("Conta já existe")
         })
