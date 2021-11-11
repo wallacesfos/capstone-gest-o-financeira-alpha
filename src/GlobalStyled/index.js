@@ -103,6 +103,22 @@ const GlobalStyled = createGlobalStyle`
     .pointer{
         cursor: pointer;
     }
+
+    .exit{
+        color: #E74C3C;
+    }
+
+    .deposit{
+        color: #2ECC71;
+    }
+
+    .movement{
+        color: #3498DB;
+    }
+
+    .free{
+        color: #F1C40F;
+    }
 `;
 
 export default GlobalStyled;
