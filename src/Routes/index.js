@@ -1,12 +1,17 @@
 import { Switch, Route } from "react-router";
+import Login from '../Pages/Login'
+import SignUp from '../Pages/SignUp'
+
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        Login
+        <Login />
       </Route>
-      <Route path="/signup">Signup</Route>
+      <Route path="/signup">
+        <SignUp />
+      </Route>
       <Route path="/dashboard">Dashboard</Route>
       <Route path="/finance">Finanças</Route>
       <Route path="/analysis">Análises</Route>

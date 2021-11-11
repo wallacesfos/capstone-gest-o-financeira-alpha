@@ -85,10 +85,11 @@ export default function Login(){
                         }}
                         />
                     </div>
+                    
                 </LoginForm>
 
                 <button className="btn-primary" onClick={handleClick}>Entrar</button>
-                <Paragrafo onClick={() => history.push('/register')}>Não é cadastrado? Cadastre-se</Paragrafo>
+                <Paragrafo onClick={() => history.push('/signup')}>Não é cadastrado? Cadastre-se</Paragrafo>
             </SigninDiv>
         </Container>
     )
