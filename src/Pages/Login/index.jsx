@@ -1,3 +1,4 @@
+import React from 'react'
 import {Container, ImageDiv, SigninDiv, Image, LoginForm, Paragrafo} from './style.js'
 import AlphaImage from '../../Assets/Alpha.png'
 import Person from '../../Assets/Icons/Person.png'
