@@ -1,5 +1,13 @@
 import {
-  Button,
+  Container,
+  ExitContainer,
+  FormContainer,
+  InfoContainer,
+  InputContainer,
+  LaunchContainer,
+  RecordContainer,
+} from "./styles";
+import {
   FormControlLabel,
   Radio,
   RadioGroup,
@@ -12,27 +20,12 @@ const Monthly = ({ month = "November" }) => {
   const [exit, setExit] = useState([]);
 
   return (
-    <>
-      <div>
-        <h1>Valores referentes ao mês de {month}</h1>
-        <div>
-          <p>list input</p>
-          <hr />
-          <p>Valor de enttrada mensal R$ 50.000,00 </p>
-          <p>Quantidade de entrada 1</p>
-        </div>
-        <div>
-          <p>list exit</p>
-          <hr />
-          <p>Valor de saída mensal R$ 50.000,00 </p>
-          <p>Quantidade de saída 1</p>
-        </div>
-      </div>
-      <div>
-        <p>Adicione suas finanças do mês</p>
-        <p>Super fáciel, preencha o formulário</p>
+    <Container>
+      <LaunchContainer>
+        <p className="info">Adicione suas finanças do mês</p>
+        <p className="description">Super fáciel, preencha o formulário</p>
 
-        <form>
+        <FormContainer>
           <RadioGroup row aria-label="gender">
             <FormControlLabel
               value="Entrada"
@@ -45,10 +38,38 @@ const Monthly = ({ month = "November" }) => {
           <TextField label="Categoria" variant="standard"></TextField>
           <TextField label="Descrição" variant="standard"></TextField>
           <TextField label="Valor" variant="standard"></TextField>
-          <Button variant="contained">Adicionar</Button>
-        </form>
-      </div>
-    </>
+          <button>Adicionar</button>
+        </FormContainer>
+      </LaunchContainer>
+      <RecordContainer>
+        <h1 className="hidden">Valores referentes ao mês de {month}</h1>
+
+        <InputContainer>
+          <p>list input</p>
+          <hr />
+          <InfoContainer>
+            <p className="infoRecord">Valor de enttrada mensal</p>
+            <p>R$ 50.000,00</p>
+          </InfoContainer>
+          <InfoContainer>
+            <p className="infoRecord">Quantidade de entrada </p>
+            <p>1</p>
+          </InfoContainer>
+        </InputContainer>
+        <ExitContainer>
+          <p>list exit</p>
+          <hr />
+          <InfoContainer>
+            <p className="infoRecord">Valor de saída mensal</p>
+            <p>R$ 3.000,00</p>
+          </InfoContainer>
+          <InfoContainer>
+            <p className="infoRecord">Valor de saída mensal</p>
+            <p>1</p>
+          </InfoContainer>
+        </ExitContainer>
+      </RecordContainer>
+    </Container>
   );
 };
 
