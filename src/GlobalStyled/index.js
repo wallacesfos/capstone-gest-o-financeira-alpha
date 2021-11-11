@@ -100,7 +100,6 @@ const GlobalStyled = createGlobalStyle`
     .padlock{
         height: 28px;
     }
-
     .pointer{
         cursor: pointer;
     }

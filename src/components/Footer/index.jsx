@@ -1,5 +1,5 @@
 import { Container, ListContainer, LogoContainer } from "./styles";
-import LogoFooter from "../../Assets/logo_footer.png";
+import LogoFooter from "../../assets/logo_footer.png";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { IoMdAnalytics } from "react-icons/io";
 import { RiBookletLine, RiCalendarLine } from "react-icons/ri";
