@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Container,
   ImageDiv,
@@ -89,7 +90,8 @@ export default function Login() {
         <button className="btn-primary" onClick={handleClick}>
           Entrar
         </button>
-        <Paragrafo onClick={() => history.push("/register")}>
+
+        <Paragrafo onClick={() => history.push("/signup")}>
           Não é cadastrado? Cadastre-se
         </Paragrafo>
       </SigninDiv>

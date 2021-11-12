@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Container,
   ExitContainer,
@@ -14,10 +15,19 @@ import {
   TextField,
 } from "@material-ui/core";
 import { useState } from "react";
+import CardMontlhyMovements from "../CardMontlhyMovements";
 
 const Monthly = ({ month = "November" }) => {
-  const [input, setInput] = useState([]);
-  const [exit, setExit] = useState([]);
+  const [input, setInput] = useState([
+    { category: "Salario", description: "Renda Fixa", value: "50.000,00" },
+    { category: "Ajuda", description: "Auxílio", value: "1.000,00" },
+    { category: "Empréstimo", description: "Auxílio", value: "100,00" },
+  ]);
+  const [exit, setExit] = useState([
+    { category: "Aguá", description: "Despesa Fixa", value: "10.000,00" },
+    { category: "Internet", description: "Depesa Fixa", value: "1.000,00" },
+    { category: "X-box", description: "Diversão", value: "500,00" },
+  ]);
 
   return (
     <Container>
@@ -41,11 +51,20 @@ const Monthly = ({ month = "November" }) => {
           <button>Adicionar</button>
         </FormContainer>
       </LaunchContainer>
+
       <RecordContainer>
         <h1 className="hidden">Valores referentes ao mês de {month}</h1>
 
         <InputContainer>
-          <p>list input</p>
+          {input.map((item, index) => (
+            <CardMontlhyMovements
+              key={index}
+              category={item.category}
+              description={item.description}
+              value={item.value}
+              isInput
+            />
+          ))}
           <hr />
           <InfoContainer>
             <p className="infoRecord">Valor de enttrada mensal</p>
@@ -56,8 +75,17 @@ const Monthly = ({ month = "November" }) => {
             <p>1</p>
           </InfoContainer>
         </InputContainer>
+
         <ExitContainer>
-          <p>list exit</p>
+          {exit.map((item, index) => (
+            <CardMontlhyMovements
+              key={index}
+              category={item.category}
+              description={item.description}
+              value={item.value}
+              isInput
+            />
+          ))}
           <hr />
           <InfoContainer>
             <p className="infoRecord">Valor de saída mensal</p>
