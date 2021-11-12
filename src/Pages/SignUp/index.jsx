@@ -1,3 +1,4 @@
+import React from 'react'
 import {Container, ImageDiv, SigninDiv, Image} from './style.js'
 import AlphaImage from '../../Assets/Alpha.png'
 import Register from '../../Components/Register'

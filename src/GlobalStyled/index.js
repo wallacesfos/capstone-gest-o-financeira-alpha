@@ -119,6 +119,10 @@ const GlobalStyled = createGlobalStyle`
     .free{
         color: #F1C40F;
     }
+
+    .Footer-Empurrer{
+        height: 100px;
+    }
 `;
 
 export default GlobalStyled;
