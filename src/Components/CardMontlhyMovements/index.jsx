@@ -8,6 +8,7 @@ const CardMontlhyMovements = ({
   category,
   description,
   value,
+  progress,
   isInput = false,
 }) => {
   return (
@@ -18,11 +19,11 @@ const CardMontlhyMovements = ({
       </InconContainer>
       <div className="info">
         <InfoContainer>
-          <p className="category">Salário</p>
-          <p className="description">Renda Fixa</p>
-          <p className="value">R$ 50.000,00</p>
+          <p className="category">{category}</p>
+          <p className="description">{description}</p>
+          <p className="value">{value}</p>
         </InfoContainer>
-        <ProgressBar completed={60} />
+        <ProgressBar completed={progress} />
       </div>
     </Container>
   );
