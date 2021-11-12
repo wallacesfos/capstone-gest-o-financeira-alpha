@@ -1,4 +1,5 @@
 import Monthly from "./Components/Monthly";
+import React from "react";
 import GlobalStyled from "./GlobalStyled";
 import Routes from "./Routes";
 

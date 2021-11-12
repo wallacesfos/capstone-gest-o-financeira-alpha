@@ -1,3 +1,4 @@
+import React from 'react'
 import {Container, Separator} from './style.js'
 
 export default function CardMovement({image, title, values, type}){
