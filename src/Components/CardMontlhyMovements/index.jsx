@@ -2,6 +2,7 @@ import React from "react";
 import { CgDollar } from "react-icons/cg";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { Container, InconContainer, InfoContainer } from "./styles";
 
 const CardMontlhyMovements = ({
   category,
@@ -10,15 +11,20 @@ const CardMontlhyMovements = ({
   isInput = false,
 }) => {
   return (
-    <>
-      <div>{isInput ? <CgDollar /> : <FaHandHoldingUsd />}</div>
-      <div>
-        <p>Salário</p>
-        <p>Renda Fixa</p>
-        <p>R$ 50.000,00</p>
+    <Container>
+      <InconContainer>
+        {isInput ? <CgDollar /> : <FaHandHoldingUsd />}
+        <div>x</div>
+      </InconContainer>
+      <div className="info">
+        <InfoContainer>
+          <p className="category">Salário</p>
+          <p className="description">Renda Fixa</p>
+          <p className="value">R$ 50.000,00</p>
+        </InfoContainer>
+        <ProgressBar completed={60} />
       </div>
-      <ProgressBar completed={60} />
-    </>
+    </Container>
   );
 };
 
