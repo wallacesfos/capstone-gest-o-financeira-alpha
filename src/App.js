@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import CardMontlhyMovements from "./Components/CardMontlhyMovements";
 import GlobalStyled from "./GlobalStyled";
 import Routes from "./Routes";
 
@@ -7,6 +8,7 @@ function App() {
     <div>
       <GlobalStyled />
       <Routes />
+      <CardMontlhyMovements />
     </div>
   );
 }
