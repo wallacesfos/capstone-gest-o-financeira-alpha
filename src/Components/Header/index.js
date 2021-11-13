@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
-import LogoFooter from "../../assets/logo_footer.png";
+import LogoFooter from "../../Assets/logo_footer.png";
 import { HeaderContainer, LinksContainer, UserIconContainer } from "./styles";
 import Menu from "@material-ui/core/Menu";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
