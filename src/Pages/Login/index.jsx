@@ -90,6 +90,7 @@ export default function Login() {
         <button className="btn-primary" onClick={handleClick}>
           Entrar
         </button>
+
         <Paragrafo onClick={() => history.push("/signup")}>
           Não é cadastrado? Cadastre-se
         </Paragrafo>
