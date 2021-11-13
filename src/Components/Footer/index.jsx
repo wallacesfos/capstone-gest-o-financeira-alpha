@@ -1,3 +1,4 @@
+import React from 'react'
 import { Container, ListContainer, LogoContainer } from "./styles";
 import LogoFooter from "../../Assets/logo_footer.png";
 import { FaMoneyBillWave } from "react-icons/fa";

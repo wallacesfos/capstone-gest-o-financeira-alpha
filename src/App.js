@@ -1,12 +1,12 @@
+import React from "react";
 import GlobalStyled from "./GlobalStyled";
-import {UserPage} from "./Pages/UserPage"
-
+import Routes from "./Routes";
 
 function App() {
   return (
     <div>
-      <UserPage/>
       <GlobalStyled />
+      <Routes />
     </div>
   );
 }
