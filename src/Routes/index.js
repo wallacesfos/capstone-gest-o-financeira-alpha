@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router";
 import Analise from "../Pages/Analise";
 import Login from '../Pages/Login'
 import SignUp from '../Pages/SignUp'
+import {UserPage} from "../Pages/UserPage"
 
 
 const Routes = () => {
@@ -21,7 +22,9 @@ const Routes = () => {
       </Route>
       <Route path="/monthly">Mensal</Route>
       <Route path="/yearly">Anual</Route>
-      <Route path="/user">Usuário</Route>
+      <Route path="/user">
+        <UserPage/>
+        Usuário</Route>
     </Switch>
   );
 };

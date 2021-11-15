@@ -67,8 +67,6 @@ export const HeaderContainer = styled.section`
       height: 2.6rem;
     }
 
-    
-
     h6 {
       margin-left: 12rem;
     }
