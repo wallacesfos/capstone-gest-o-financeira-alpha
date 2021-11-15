@@ -67,8 +67,11 @@ export const HeaderContainer = styled.section`
       height: 2.6rem;
     }
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> develop
     h6 {
       margin-left: 12rem;
     }
