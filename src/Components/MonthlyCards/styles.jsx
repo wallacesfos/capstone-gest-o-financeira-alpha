@@ -16,10 +16,12 @@ export const MonthlyCardContainer = styled.div`
     padding: 10px;
     flex-wrap: wrap;
     min-height: 80px;
+    margin-bottom: 1rem;
   }
 `;
 
 export const DataContainer = styled.div`
   height: 100%;
   width: 202px;
+  margin-bottom: 1rem;
 `;

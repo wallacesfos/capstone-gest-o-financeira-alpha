@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Main, Text } from "./styles.jsx";
+import { Container, Card, Main, Text, CategoryDiv } from "./styles.jsx";
 import { Header } from "../../Components/Header";
 import CardMovement from "../../Components/CardMovement/index.jsx";
 import Movement from "../../Assets/Icons/Movement.png";
@@ -47,14 +47,14 @@ export const YearlyDashboard = () => {
       <Text style={{ padding: "29px 10px 0 10px" }}>
         <p className="Moviments-text">Valores totais de todos os meses</p>
       </Text>
-      <div>
+      <CategoryDiv>
         <p>Mês</p>
-        <p>Movimentacões</p>
+        <p>Movimentações</p>
         <p>Entradas</p>
         <p>Saídas</p>
         <p>Livre</p>
         <p>Restante</p>
-      </div>
+      </CategoryDiv>
       <MonthlyCards
         month="Janeiro"
         movement={3500}
@@ -72,7 +72,7 @@ export const YearlyDashboard = () => {
         percentage={0}
       />
       <MonthlyCards
-        month="Marco"
+        month="Março"
         movement={3500}
         ins={3500}
         out={0}

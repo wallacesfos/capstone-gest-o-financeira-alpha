@@ -5,13 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  .Graphics-text {
-    color: #3498db;
-    margin: 50px 0 20px 0;
-    width: 100%;
-    padding-left: 5%;
-  }
 `;
 
 export const Card = styled.div`
@@ -35,15 +28,6 @@ export const Main = styled.div`
   }
 `;
 
-export const Graphics = styled.section`
-  margin: 10px 0 30px;
-  height: 500px;
-  width: 90%;
-  background-color: #222a39;
-  border: 40px solid #222a39;
-  border-radius: 20px;
-`;
-
 export const Text = styled.div`
   padding: 110px 10px 0 10px;
   margin-bottom: 20px;
@@ -56,5 +40,20 @@ export const Text = styled.div`
 
   h3 {
     font-family: Arial;
+  }
+`;
+
+export const CategoryDiv = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 calc(1.5rem / 2);
+  > p {
+    height: 100%;
+    width: 202px;
+    color: #3498db;
+  }
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
