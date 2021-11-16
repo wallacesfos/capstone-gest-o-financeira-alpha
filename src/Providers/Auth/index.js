@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 import axios from "axios";
 import toast from 'react-hot-toast';
 import { useHistory } from "react-router-dom";
-import { Redirect } from 'react-router';
 
 export const AuthContext = createContext({});
 

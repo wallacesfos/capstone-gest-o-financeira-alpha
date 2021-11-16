@@ -4,7 +4,6 @@ import Footer from "../../Components/Footer";
 import { UserContainer, InfoContainer, InfoDiv, ContainerPage } from "./styles";
 import { AccountCircle } from "@material-ui/icons";
 import { Input, Button } from "@material-ui/core";
-import { InputAdornment } from "@material-ui/core";
 
 export const UserPage = () => {
   return (

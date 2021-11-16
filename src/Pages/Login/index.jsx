@@ -35,7 +35,7 @@ export default function Login() {
     await signIn(formData)
     
 
-    localStorage.getItem('@token_alpha') && history.push('/signup')
+    localStorage.getItem('@token_alpha') && history.push('/monthly')
   };
 
   return (

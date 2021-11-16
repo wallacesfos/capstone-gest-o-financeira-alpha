@@ -126,6 +126,10 @@ const GlobalStyled = createGlobalStyle`
     .Footer-Empurrer{
         height: 100px;
     }
+
+    .month{
+        width: 100% !important; 
+    }
 `;
 
 export default GlobalStyled;

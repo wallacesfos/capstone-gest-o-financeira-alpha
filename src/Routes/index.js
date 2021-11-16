@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router";
+import Monthly from "../Pages/Monthly";
 import Analise from "../Pages/Analysis";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
@@ -20,7 +21,9 @@ const Routes = () => {
       <Route path="/analysis">
         <Analise />
       </Route>
-      <Route path="/monthly">Mensal</Route>
+      <Route path="/monthly">
+        <Monthly />
+      </Route>
       <Route path="/yearly">
         <YearlyDashboard />
       </Route>
