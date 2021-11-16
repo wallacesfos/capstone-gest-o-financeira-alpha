@@ -25,14 +25,17 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleClick = () => {
+  const handleClick = async () => {
     const formData = {
       email: email,
       password: senha,
     };
     console.log(formData);
 
-    signIn(formData);
+    await signIn(formData)
+    
+
+    localStorage.getItem('@token_alpha') && history.push('/signup')
   };
 
   return (

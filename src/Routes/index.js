@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router";
-import Analise from "../Pages/Analise";
+import Analise from "../Pages/Analysis";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import { UserPage } from "../Pages/UserPage";

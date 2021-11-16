@@ -48,7 +48,7 @@ export const Graphics = styled.section`
 `
 
 export const Text = styled.div`
-    padding: 110px 10px 0 10px;
+    padding: 10px 10px 0 10px;
     margin-bottom: 20px;
     font-family: Arial;
     width: 100%;

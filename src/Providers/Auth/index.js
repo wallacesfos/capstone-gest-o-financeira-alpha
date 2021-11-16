@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 import axios from "axios";
 import toast from 'react-hot-toast';
 import { useHistory } from "react-router-dom";
+import { Redirect } from 'react-router';
 
 export const AuthContext = createContext({});
 
@@ -15,19 +16,13 @@ export const AuthProvider = ({ children }) => {
     const [authToken, setAuthToken] = useState(
         () => localStorage.getItem("@token_alpha") || ""
     );
-    
-
-    const movePage = (url) => {
-        history.push(url)
-    }
-
+        
     //Login
     const signIn = async (userData) => {
         await axios
           .post("https://alpha-api-capstone.herokuapp.com/login", userData)
           .then((response) => {
             //Token Putting without local storage
-            console.log(response)
             localStorage.setItem("@token_alpha", response.data.accessToken);
 
             //id
@@ -37,11 +32,11 @@ export const AuthProvider = ({ children }) => {
             //Setting token in AuthToken
             setAuthToken(response.data.token);
 
-            movePage('/register')
           })
-          .catch(() => {
+          .catch((res) => {
                 //mensage error
-                toast.error("Conta não existe")
+                res.response.status === 400 && toast.error("Conta não existe")
+
             });
     };
 
