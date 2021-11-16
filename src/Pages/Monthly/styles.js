@@ -15,7 +15,7 @@ export const Container = styled.div`
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: flex-start;
-  }
+
 `;
 export const LaunchContainer = styled.div`
   width: 80%;
@@ -47,6 +47,7 @@ export const LaunchContainer = styled.div`
 `;
 export const FormContainer = styled.div`
   display: flex;
+
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
