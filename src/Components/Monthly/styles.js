@@ -9,6 +9,15 @@ export const Container = styled.div`
   .hidden {
     display: none;
   }
+
+  @media (min-width: 700px) {
+    flex-direction: row-reverse;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
 `;
 
 export const LaunchContainer = styled.div`
@@ -33,10 +42,19 @@ export const LaunchContainer = styled.div`
     font-size: 16px;
     margin-bottom: 50px;
   }
+
+  @media (min-width: 550px) {
+    max-width: 500px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 30%;
+  }
 `;
 
 export const FormContainer = styled.form`
   display: flex;
+
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -60,6 +78,13 @@ export const RecordContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1200px) {
+    width: 60%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -77,6 +102,15 @@ export const InputContainer = styled.div`
     width: 80%;
     margin: 20px 0;
   }
+
+  @media (min-width: 450px) {
+    max-width: 420px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 380px;
+    margin-right: 20px;
+  }
 `;
 
 export const ExitContainer = styled.div`
@@ -93,6 +127,14 @@ export const ExitContainer = styled.div`
   hr {
     width: 80%;
     margin: 20px 0;
+  }
+
+  @media (min-width: 450px) {
+    max-width: 420px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 380px;
   }
 `;
 
