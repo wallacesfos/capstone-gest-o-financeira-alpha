@@ -62,6 +62,7 @@ const Monthly = ({ month = "November" }) => {
               category={item.category}
               description={item.description}
               value={item.value}
+              progress={32}
               isInput
             />
           ))}
@@ -83,7 +84,7 @@ const Monthly = ({ month = "November" }) => {
               category={item.category}
               description={item.description}
               value={item.value}
-              isInput
+              progress={30}
             />
           ))}
           <hr />
