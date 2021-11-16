@@ -45,6 +45,10 @@ export const LoginForm = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
+
+  @media(max-width: 768px){
+    margin: 0px 0 2px 0;
+  }
 `;
 
 export const Paragrafo = styled.p`

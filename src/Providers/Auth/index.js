@@ -10,26 +10,34 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     
-    const history = useHistory()
+    const history = useHistory();
 
     const [authToken, setAuthToken] = useState(
         () => localStorage.getItem("@token_alpha") || ""
     );
+    
+
+    const movePage = (url) => {
+        history.push(url)
+    }
 
     //Login
-    const signIn = (userData) => {
-        axios
+    const signIn = async (userData) => {
+        await axios
           .post("https://alpha-api-capstone.herokuapp.com/login", userData)
           .then((response) => {
             //Token Putting without local storage
+            console.log(response)
             localStorage.setItem("@token_alpha", response.data.accessToken);
 
-            //Redirecting
-            history.push('/dashboard')
+            //id
+            localStorage.setItem("@id_alpha", response.data.user.id);
+
 
             //Setting token in AuthToken
             setAuthToken(response.data.token);
 
+            movePage('/register')
           })
           .catch(() => {
                 //mensage error

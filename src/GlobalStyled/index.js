@@ -67,8 +67,9 @@ const GlobalStyled = createGlobalStyle`
     }
 
     .text-primary{
-        color: #19A18F;
+        color: #19a19c !important;
         font-size: 15px;
+        margin: 0;
     }
     
     .inputs-register{

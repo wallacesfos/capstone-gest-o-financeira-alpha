@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Container, Card, Main, Graphics,Text} from './style.js'
 import {Header} from '../../Components/Header'
 import CardMovement from '../../Components/CardMovement/index.jsx'
@@ -8,12 +8,31 @@ import Deposit from '../../Assets/Icons/Deposit.png'
 import Free from '../../Assets/Icons/Free.png'
 import Chart from 'react-apexcharts';
 import Footer from '../../Components/Footer';
-
-
+import { useContext } from "react";
+import { FinanceContext } from "../../Providers/Finances";
 
 
 export default function Analise(){
 
+    const { handleFinance, finances, exits, enters } = useContext(FinanceContext);
+
+
+    useEffect(() => {
+        handleFinance()
+    }, []);
+    
+    
+
+
+    const entersGraphics = (month) =>{
+        return enters.filter((item) => item.month === month).reduce((a, b) => a + b.value ,0) 
+    }
+    
+    const exitsGraphics = (month) =>{
+        return exits.filter((item) => item.month === month).reduce((a, b) => a + b.value ,0) 
+    }
+
+    console.log(finances);
     const State = {
         options: {
           chart: {
@@ -27,12 +46,12 @@ export default function Analise(){
         series: [
           {
             name: "Entradas 2021",
-            data: [0, 0, 0, 0, 0, 0, 0, 0,0,0,6500,0]
+            data: [entersGraphics('janeiro'), entersGraphics('fevereiro'), entersGraphics('março'), entersGraphics('abril'), entersGraphics('maio'), entersGraphics('junho'), entersGraphics('julho'), entersGraphics('agosto'), entersGraphics('setembro'), entersGraphics('outubro'), entersGraphics('novembro'), entersGraphics('dezembro')]
           },
           {
               name: "Saídas 2021",
-              data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3000, 0]
-          }
+              data: [exitsGraphics('janeiro'), exitsGraphics('fevereiro'), exitsGraphics('março'), exitsGraphics('abril'), exitsGraphics('maio'), exitsGraphics('junho'), exitsGraphics('julho'), exitsGraphics('agosto'), exitsGraphics('setembro'), exitsGraphics('outubro'), exitsGraphics('novembro'), exitsGraphics('dezembro')]
+            }
         ]
     };
   
@@ -46,19 +65,19 @@ export default function Analise(){
             </Text>
             <Main>
                 <Card>
-                    <CardMovement image={Movement} title="Movimentação" values={9500} type="movement"/>
+                    <CardMovement image={Movement} title="Movimentação" values={enters.reduce((a,b) => a + b.value ,0) + exits.reduce((a,b) => a + b.value ,0)} type="movement"/>
                 </Card>
 
                 <Card>
-                    <CardMovement image={Deposit} title="Entrada" values={6500} type="deposit"/>
+                    <CardMovement image={Deposit} title="Entrada" values={enters.reduce((a,b) => a + b.value ,0)} type="deposit"/>
                 </Card>
 
                 <Card>
-                    <CardMovement image={Exit} title="Saídas" values={3000} type="exit"/>
+                    <CardMovement image={Exit} title="Saídas" values={exits.reduce((a,b) => a + b.value ,0)} type="exit"/>
                 </Card >
 
                 <Card>
-                    <CardMovement image={Free} title="Livre" values={3500} type="free"/>
+                    <CardMovement image={Free} title="Livre" values={enters.reduce((a,b) => a + b.value ,0) - exits.reduce((a,b) => a + b.value ,0)} type="free"/>
                 </Card>
             </Main>
             <p className="Graphics-text">Gráficos com entradas e saídas mensais</p>

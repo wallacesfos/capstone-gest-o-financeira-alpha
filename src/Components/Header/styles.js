@@ -1,118 +1,105 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.section`
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 1199;
 
-  .MuiToolbar-root {
+export const Navbar = styled.nav`
+  width: 100%;
+  background-color: #222A39;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+
+  div{
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Logo-Header{
+    height: 100%;
+  }
+
+  .navbar-links ul{
+    display: flex;
+    list-style: none
+  }
+
+  .navbar-links li{
+    margin-left: 30px;
+    cursor: pointer;
+    @media (max-width: 768px){
+      display: none;
+    } 
+  }
+
+  .navbar-final{
+    width: 250px;
+    display: flex;
     justify-content: space-between;
-    min-height: 85px;
+    margin-right: 50px;
+    
+    @media (max-width: 768px){
+      display: none;
+    } 
   }
 
-  .MuiAppBar-colorPrimary {
-    background-color: var(--darkDesaturatedBlue);
+  .hamburguer-menu{
+    cursor: pointer;
+    @media (min-width: 769px){
+      display: none;
+    }
   }
 
-  img {
-    width: 4.5rem;
-    height: 4.5rem;
-    color: var(--gray);
-  }
+  .Menu-Mobile{
+    background-color: #222A39;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
-  .icon {
-    font-size: 20px;
-    margin: 0 7px;
-    color: var(--gray);
-  }
-
-  .icon-menu {
-      width: 2.6rem;
-      height: 2.6rem;
+    ul{
+      list-style: none;
+      width: 100%;
+      padding: 0;
     }
 
-  li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    ul li{
+      font-size: 35px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #C1C1C1;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
 
-  p {
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--gray);
-  }
+    .logo-mobile{
+      height: 150px;
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #c1c1c1;
+      align-items: center;
+    }
 
-  @media (min-width: 900px) {
-    .MenuMobile {
+    .close{
+      color: red;
+      font-size: 30px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .Logo-Header-mobile{
+      height: 120px;
+    }
+    @media(min-width: 769px){
       display: none;
     }
 
-    .icon-menu {
-      width: 2.6rem;
-      height: 2.6rem;
-    }
-
-    h6 {
-      margin-left: 7rem;
-    }
   }
 
-  @media (min-width: 1440px) {
-    svg {
-      width: 2.6rem;
-      height: 2.6rem;
-    }
 
-    
-
-    h6 {
-      margin-left: 12rem;
-    }
-  }
-
-  @media (min-width: 2000px) {
-    h6 {
-      margin-left: 15rem;
-    }
-  }
-`;
-
-export const LinksContainer = styled.div`
-  width: 45vw;
-  display: none;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-around;
-
-  @media (min-width: 910px) {
-    display: flex;
-  }
-`;
-
-export const UserIconContainer = styled.div`
-  width: 50vw;
-  display: none;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-end;
-
-  svg {
-    width: 2.6rem;
-    height: 2.6rem;
-    color: var(--gray);
-  }
-
-  p {
-    margin-right: 16px;
-  }
-
-  @media (min-width: 900px) {
-    display: flex;
-  }
-`;
+`
