@@ -4,7 +4,8 @@ import AlphaGif from '../../Assets/Alpha.gif'
 
 export const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
 `
 
@@ -29,10 +30,11 @@ export const Image = styled.img`
 
 export const SigninDiv = styled.div`
     width: 500px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #222A39;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
     align-items: center;    
     @media(max-width: 768px){
         width: 100%;
