@@ -24,9 +24,14 @@ export const Container = styled.div`
   @media (min-width: 700px) {
     justify-content: space-between;
     padding: 10px 20px;
+    align-self: flex-end;
+    position: relative;
+    z-index: 0;
+    width: 100%;
 
     .hidden {
       display: flex;
+      margin: 5px;
     }
 
     .hiddenList {
@@ -37,6 +42,10 @@ export const Container = styled.div`
   @media (min-width: 900px) {
     justify-content: space-around;
     padding: 10px 0px;
+    position: relative;
+    align-self: flex-end;
+    z-index: 0;
+    width: 100%;
 
     .hiddenList {
       display: flex;
@@ -75,6 +84,10 @@ export const ListContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    p {
+      align-self: center;
+    }
   }
 
   @media (min-width: 900px) {
