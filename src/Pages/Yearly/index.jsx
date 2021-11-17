@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Card, Main, Text, CategoryDiv } from "./styles.jsx";
 import { Header } from "../../Components/Header";
 import CardMovement from "../../Components/CardMovement/index.jsx";
@@ -8,8 +8,52 @@ import Deposit from "../../Assets/Icons/Deposit.png";
 import Free from "../../Assets/Icons/Free.png";
 import Footer from "../../Components/Footer";
 import { MonthlyCards } from "../../Components/MonthlyCards/index.jsx";
+import { FinanceContext } from "../../Providers/Finances/index.js";
 
 export const YearlyDashboard = () => {
+  const { handleFinance, finances, enters, exits } = useContext(FinanceContext);
+  useEffect(() => {
+    handleFinance();
+  }, []);
+  console.log(finances);
+  const getMonthlyFinance = (month, type) => {
+    const currentMonth = finances
+      .filter((value) => value.month === month && value.type === type)
+      .reduce((a, b) => a + b.value, 0);
+    return currentMonth;
+  };
+
+  const getMonthlyMovement = (month) => {
+    const currentMonth = finances.filter((value) => value.month === month);
+    const currentMonthEnters = currentMonth.filter(
+      (value) => value.type === "Entrada"
+    );
+    const currentMonthExits = currentMonth.filter(
+      (value) => value.type === "saida"
+    );
+    return (
+      currentMonthEnters.reduce((a, b) => a + b.value, 0) +
+      currentMonthExits.reduce((a, b) => a + b.value, 0)
+    );
+  };
+
+  const getPercentage = (month) => {
+    const currentMonth = finances.filter((value) => value.month === month);
+    const currentMonthEnters = currentMonth.filter(
+      (value) => value.type === "Entrada"
+    );
+    const currentMonthExits = currentMonth.filter(
+      (value) => value.type === "saida"
+    );
+    const totalMovement =
+      currentMonthEnters.reduce((a, b) => a + b.value, 0) +
+      currentMonthExits.reduce((a, b) => a + b.value, 0);
+
+    return (
+      (currentMonthExits.reduce((a, b) => a + b.value, 0) / totalMovement) *
+      100
+    ).toFixed(2);
+  };
   return (
     <Container>
       <Header />
@@ -22,7 +66,10 @@ export const YearlyDashboard = () => {
           <CardMovement
             image={Movement}
             title="Movimentação"
-            values={9500}
+            values={
+              enters.reduce((a, b) => a + b.value, 0) +
+              exits.reduce((a, b) => a + b.value, 0)
+            }
             type="movement"
           />
         </Card>
@@ -31,17 +78,30 @@ export const YearlyDashboard = () => {
           <CardMovement
             image={Deposit}
             title="Entrada"
-            values={6500}
+            values={enters.reduce((a, b) => a + b.value, 0)}
             type="deposit"
           />
         </Card>
 
         <Card>
-          <CardMovement image={Exit} title="Saídas" values={3000} type="exit" />
+          <CardMovement
+            image={Exit}
+            title="Saídas"
+            values={exits.reduce((a, b) => a + b.value, 0)}
+            type="exit"
+          />
         </Card>
 
         <Card>
-          <CardMovement image={Free} title="Livre" values={3500} type="free" />
+          <CardMovement
+            image={Free}
+            title="Livre"
+            values={
+              enters.reduce((a, b) => a + b.value, 0) -
+              exits.reduce((a, b) => a + b.value, 0)
+            }
+            type="free"
+          />
         </Card>
       </Main>
       <Text style={{ padding: "29px 10px 0 10px" }}>
@@ -57,98 +117,134 @@ export const YearlyDashboard = () => {
       </CategoryDiv>
       <MonthlyCards
         month="Janeiro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("janeiro")}
+        ins={getMonthlyFinance("janeiro", "Entrada")}
+        out={getMonthlyFinance("janeiro", "saida")}
+        free={
+          getMonthlyFinance("janeiro", "Entrada") -
+          getMonthlyFinance("janeiro", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Fevereiro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("fevereiro")}
+        ins={getMonthlyFinance("fevereiro", "Entrada")}
+        out={getMonthlyFinance("fevereiro", "saida")}
+        free={
+          getMonthlyFinance("fevereiro", "Entrada") -
+          getMonthlyFinance("fevereiro", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Março"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("março")}
+        ins={getMonthlyFinance("março", "Entrada")}
+        out={getMonthlyFinance("março", "saida")}
+        free={
+          getMonthlyFinance("março", "Entrada") -
+          getMonthlyFinance("março", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Abril"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("abril")}
+        ins={getMonthlyFinance("abril", "Entrada")}
+        out={getMonthlyFinance("abril", "saida")}
+        free={
+          getMonthlyFinance("abril", "Entrada") -
+          getMonthlyFinance("abril", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Maio"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("maio")}
+        ins={getMonthlyFinance("maio", "Entrada")}
+        out={getMonthlyFinance("maio", "saida")}
+        free={
+          getMonthlyFinance("maio", "Entrada") -
+          getMonthlyFinance("maio", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Junho"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("junho")}
+        ins={getMonthlyFinance("junho", "Entrada")}
+        out={getMonthlyFinance("junho", "saida")}
+        free={
+          getMonthlyFinance("junho", "Entrada") -
+          getMonthlyFinance("junho", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Julho"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("julho")}
+        ins={getMonthlyFinance("julho", "Entrada")}
+        out={getMonthlyFinance("julho", "saida")}
+        free={
+          getMonthlyFinance("julho", "Entrada") -
+          getMonthlyFinance("julho", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Agosto"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("agosto")}
+        ins={getMonthlyFinance("agosto", "Entrada")}
+        out={getMonthlyFinance("agosto", "saida")}
+        free={
+          getMonthlyFinance("agosto", "Entrada") -
+          getMonthlyFinance("agosto", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Setembro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("setembro")}
+        ins={getMonthlyFinance("setembro", "Entrada")}
+        out={getMonthlyFinance("setembro", "saida")}
+        free={
+          getMonthlyFinance("setembro", "Entrada") -
+          getMonthlyFinance("setembro", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Outubro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("outubro")}
+        ins={getMonthlyFinance("outubro", "Entrada")}
+        out={getMonthlyFinance("outubro", "saida")}
+        free={
+          getMonthlyFinance("outubro", "Entrada") -
+          getMonthlyFinance("outubro", "saida")
+        }
         percentage={0}
       />
       <MonthlyCards
         month="Novembro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
-        percentage={0}
+        movement={getMonthlyMovement("novembro")}
+        ins={getMonthlyFinance("novembro", "Entrada")}
+        out={getMonthlyFinance("novembro", "saida")}
+        free={
+          getMonthlyFinance("novembro", "Entrada") -
+          getMonthlyFinance("novembro", "saida")
+        }
+        percentage={getPercentage("novembro")}
       />
       <MonthlyCards
         month="Dezembro"
-        movement={3500}
-        ins={3500}
-        out={0}
-        free={3500}
+        movement={getMonthlyMovement("dezembro")}
+        ins={getMonthlyFinance("dezembro", "Entrada")}
+        out={getMonthlyFinance("dezembro", "saida")}
+        free={
+          getMonthlyFinance("dezembro", "Entrada") -
+          getMonthlyFinance("dezembro", "saida")
+        }
         percentage={0}
       />
       <div className="Footer-Empurrer"></div>
