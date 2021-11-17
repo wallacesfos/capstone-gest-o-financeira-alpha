@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Container, ListContainer, LogoContainer } from "./styles";
 import LogoFooter from "../../Assets/logo_footer.png";
 import { FaMoneyBillWave } from "react-icons/fa";
@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Container>
       <LogoContainer className="hidden">
-        <img src={LogoFooter} alt="logo-Alpha"/>
+        <img src={LogoFooter} alt="logo-Alpha" />
         <p>ALPHA TECNOLOGIA E FINANÇAS</p>
       </LogoContainer>
       <ListContainer className="hiddenList">

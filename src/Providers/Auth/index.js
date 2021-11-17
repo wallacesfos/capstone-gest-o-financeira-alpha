@@ -65,7 +65,6 @@ export const AuthProvider = ({ children }) => {
         setAuthToken("");
 
         // Redirecting for login
-        history.push("/");
     };
 
     return (
