@@ -130,6 +130,13 @@ const GlobalStyled = createGlobalStyle`
     .month{
         width: 100% !important; 
     }
+    .text-title{
+        font-family: Arial, Helvetica, sans-serif
+    }
+    .text-title-center{
+        width: 100%;
+        margin-left: 5%;
+    }
 `;
 
 export default GlobalStyled;
