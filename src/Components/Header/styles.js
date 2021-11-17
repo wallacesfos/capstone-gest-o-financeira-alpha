@@ -59,6 +59,8 @@ export const Navbar = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow:auto; 
+
 
     ul{
       list-style: none;
@@ -71,7 +73,7 @@ export const Navbar = styled.nav`
       margin-bottom: 15px;
       border-bottom: 1px solid #C1C1C1;
       width: 100%;
-      text-align: center;
+      text-align: start;
       cursor: pointer;
     }
 

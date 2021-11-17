@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import { UserPage } from "../Pages/UserPage";
 import { YearlyDashboard } from "../Pages/Yearly";
+import Dashboard from "../Pages/Dashboard";
 
 const Routes = () => {
   return (
@@ -16,7 +17,9 @@ const Routes = () => {
       <Route path="/signup">
         <SignUp />
       </Route>
-      <Route path="/dashboard">Dashboard</Route>
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
       <Route path="/finance">Finanças</Route>
       <Route path="/analysis">
         <Analise />
