@@ -29,7 +29,6 @@ const Routes = () => {
       </Route>
       <Route path="/user">
         <UserPage />
-        Usuário
       </Route>
     </Switch>
   );
