@@ -6,12 +6,14 @@ import CardMontlhyMovements from "../../Components/CardMontlhyMovements";
 import { useContext } from "react";
 import { FinanceContext } from "../../Providers/Finances";
 import { Header } from "../../Components/Header";
+import { useParams } from "react-router";
 
-const Monthly = ({ month = "November" }) => {
+  const Monthly = () => {
 
+  const {month} = useParams()
   const { MonthlyData, exits, enters, handleFinance, RemoveMonthly} = useContext(FinanceContext);
 
-
+  console.log(month)
   const [types, setTypes] = useState('')
   const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
@@ -27,7 +29,7 @@ const Monthly = ({ month = "November" }) => {
     const ids = localStorage.getItem('@id_alpha')
     
     const data = { 
-      "month": "novembro",
+      "month": month,
       "year": 2021,
       "type": types,
       "value": values,
@@ -39,7 +41,8 @@ const Monthly = ({ month = "November" }) => {
     MonthlyData(data)
   }
 
-
+  const ingress = enters.filter((item) => item.month === month)
+  const outgress = exits.filter((item) => item.month === month)
 
   const getProgress = (value, total) => {
     return value / total * 100
@@ -50,6 +53,7 @@ const Monthly = ({ month = "November" }) => {
     <>
       <Header />
 
+      <h2 className="text-title text-title-center">Entradas referente a {month}</h2>
       <Container>
           <LaunchContainer>
             <p className="info">Adicione suas finanças do mês</p>
@@ -65,8 +69,8 @@ const Monthly = ({ month = "November" }) => {
                 <FormControlLabel value="saida" control={<Radio />} label="Saída" />
               </RadioGroup>
 
-              <TextField className="inputs-register month" label="Categoria" variant="standard" onChange={e => setCategory(e.target.value)}></TextField>
-              <TextField className="inputs-register month" label="Descrição" variant="standard" onChange={e => setDescription(e.target.value)}></TextField>
+              <TextField inputProps={{ maxLength: 12 }} className="inputs-register month" label="Categoria" variant="standard" onChange={e => setCategory(e.target.value)}></TextField>
+              <TextField inputProps={{ maxLength: 50 }} className="inputs-register month" label="Descrição" variant="standard" onChange={e => setDescription(e.target.value)}></TextField>
               <TextField className="inputs-register month" label="Valor" variant="standard" type="number" onChange={e => setValues(e.target.valueAsNumber)}></TextField>
               <button onClick={handleForm}>Adicionar</button>
             </FormContainer>
@@ -79,8 +83,8 @@ const Monthly = ({ month = "November" }) => {
             <p className="text-primary">Entradas</p>
 
             <InputContainer>
-                {enters.map((item, index) => {
-                  const progress = getProgress(item.value, enters.reduce((a, b) => a + b.value ,0)).toFixed(2)
+                {ingress.map((item, index) => {
+                  const progress = getProgress(item.value, ingress.reduce((a, b) => a + b.value ,0)).toFixed(2)
                   
                   return <CardMontlhyMovements
                     key={index}
@@ -97,19 +101,19 @@ const Monthly = ({ month = "November" }) => {
               <InfoContainer>
 
                 <p className="infoRecord">Valor de entrada mensal</p>
-                <p>{enters.reduce((a, b) => a + b.value ,0).toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
+                <p>{ingress.reduce((a, b) => a + b.value ,0).toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
               </InfoContainer>
               <InfoContainer>
                 <p className="infoRecord">Quantidade de entrada </p>
-                <p>{enters.length}</p>
+                <p>{ingress.length}</p>
               </InfoContainer>
             </InputContainer>
           </div>
           <div>
             <p className="text-primary">Saídas</p>
             <ExitContainer>
-              {exits.map((item, index) => {
-                const progress = getProgress(item.value, exits.reduce((a, b) => a + b.value ,0)).toFixed(2)
+              {outgress.map((item, index) => {
+                const progress = getProgress(item.value, outgress.reduce((a, b) => a + b.value ,0)).toFixed(2)
                 
                 return <CardMontlhyMovements
                   key={index}
@@ -119,17 +123,16 @@ const Monthly = ({ month = "November" }) => {
                   id={item.id}
                   remove={RemoveMonthly}
                   progress={Number(progress)}
-                  isInput
                 />
               })}
               <hr />
               <InfoContainer>
                 <p className="infoRecord">Valor de saída mensal</p>
-                <p>{exits.reduce((a, b) => a + b.value ,0).toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
+                <p>{outgress.reduce((a, b) => a + b.value ,0).toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
               </InfoContainer>
               <InfoContainer>
                 <p className="infoRecord">Valor de saída mensal</p>
-                <p>{exits.length}</p>
+                <p>{outgress.length}</p>
               </InfoContainer>
             </ExitContainer>
           </div>
