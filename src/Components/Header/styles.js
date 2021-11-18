@@ -3,10 +3,12 @@ import List from "@mui/material/List";
 
 export const Navbar = styled.nav`
   width: 100%;
+  min-width: 100%;
   background-color: #222a39;
-  height: 120px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
+  padding: 0 5px;
 
   div {
     height: 100%;
@@ -20,12 +22,13 @@ export const Navbar = styled.nav`
   }
 
   .navbar-links ul {
+    margin: 0 auto;
     display: flex;
     list-style: none;
   }
 
   .navbar-links li {
-    margin-left: 30px;
+    margin-left: 20px;
     cursor: pointer;
     @media (max-width: 768px) {
       display: none;
@@ -33,10 +36,15 @@ export const Navbar = styled.nav`
   }
 
   .navbar-final {
-    width: 250px;
+    width: 220px;
     display: flex;
     justify-content: space-between;
-    margin-right: 50px;
+    align-items: center;
+    margin-right: 25px;
+
+    p {
+      margin-top: 15px;
+    }
 
     @media (max-width: 768px) {
       display: none;
@@ -55,7 +63,9 @@ export const Navbar = styled.nav`
     height: 100vh;
     width: 100vw;
     position: fixed;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -67,8 +77,14 @@ export const Navbar = styled.nav`
       padding: 0;
     }
 
-    .dashMobile {
-      font-size: 35px;
+    ul .MuiCollapse-wrapperInner div{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .dashMobile, .dropMobile span {
+      font-size: 20px;
+      padding-left: 10px;
       margin-bottom: 15px;
       border-bottom: 1px solid #c1c1c1;
       width: 100%;
@@ -76,8 +92,14 @@ export const Navbar = styled.nav`
       cursor: pointer;
     }
 
+    .dropMobile span {
+      border-bottom: none;
+    }
+
+
     .ulMobile {
-      font-size: 35px;
+      font-size: 20px;
+      padding-left: 10px;
       margin-bottom: 15px;
       width: 100%;
       text-align: start;
@@ -85,7 +107,7 @@ export const Navbar = styled.nav`
     }
 
     .ulMobile li {
-      font-size: 30px;
+      font-size: 16px;
       margin-bottom: 15px;
       width: 100%;
       cursor: pointer;
@@ -93,17 +115,21 @@ export const Navbar = styled.nav`
     }
 
     .logo-mobile {
-      height: 150px;
+      height: 80px;
       width: 100%;
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #c1c1c1;
       align-items: center;
+
+      img {
+        height: 100%;
+      }
     }
 
     .close {
       color: red;
-      font-size: 30px;
+      font-size: 20px;
       margin-right: 20px;
       cursor: pointer;
     }
@@ -174,6 +200,7 @@ export const Navbar = styled.nav`
   }
 
   .dropdown-perfil img {
+    height: 50px;
     cursor: pointer;
   }
 
@@ -210,3 +237,4 @@ export const Navbar = styled.nav`
     cursor: pointer;
   }
 `;
+

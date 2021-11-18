@@ -53,7 +53,7 @@ export const Header = () => {
         <img src={LampIcon} alt="Lampada" />
         <p>Olá, User!</p>
         <div className="dropdown-perfil">
-          <img src={PersonNav} alt="Person" />
+          <img src={PersonNav} alt="Person"/>
           <div className="dropdown-content-perfil">
             <ul className="dropdown-content-list-perfil">
               <li onClick={() => history.push("/user")}>Perfil</li>
@@ -89,10 +89,10 @@ export const Header = () => {
               aria-labelledby="nested-list-subheader"
             >
               <ListItemButton onClick={handleClick}>
-                <ListItemText primary="Mensal" />
+                <ListItemText className="dropMobile" primary="Mensal" />
                 {open ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit>
+              <Collapse in={open} timeout="auto" unmountOnExit className="teste">
                 <List component="div" disablePadding>
                   <ul className="ulMobile">
                     <li onClick={() => history.push("/monthly/janeiro")}>
