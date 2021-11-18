@@ -79,7 +79,7 @@ import Footer from "../../Components/Footer";
               <button onClick={handleForm}>Adicionar</button>
             </FormContainer>
           </LaunchContainer>
-  
+   
 
         <RecordContainer>
           <h1 className="hidden">Valores referentes ao mês de {month}</h1>
