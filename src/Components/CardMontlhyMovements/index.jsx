@@ -22,7 +22,6 @@ const CardMontlhyMovements = ({
       <div className="info">
         <InfoContainer>
           <p className="category">{category}</p>
-          <p className="description">{description}</p>
           <p className="value">{value.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
         </InfoContainer>
         <ProgressBar completed={progress} />

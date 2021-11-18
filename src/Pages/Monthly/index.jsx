@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Container, ExitContainer, FormContainer, InfoContainer, InputContainer, LaunchContainer, RecordContainer} from "./styles";
+import {Container, ExitContainer, FormContainer, InfoContainer, InputContainer, LaunchContainer, RecordContainer, GeneralContainer} from "./styles";
 import {FormControlLabel, Radio, RadioGroup, TextField } from "@material-ui/core";
 import { useState } from "react";
 import CardMontlhyMovements from "../../Components/CardMontlhyMovements";
@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { FinanceContext } from "../../Providers/Finances";
 import { Header } from "../../Components/Header";
 import { useParams } from "react-router";
-import Footer from "../../Components/Footer"
+import Footer from "../../Components/Footer";
 
   const Monthly = () => {
 
@@ -51,7 +51,7 @@ import Footer from "../../Components/Footer"
 
 
   return (
-    <>
+    <GeneralContainer>
       <Header />
 
       <h2 className="text-title text-title-center">Entradas referente a {month}</h2>
@@ -80,7 +80,7 @@ import Footer from "../../Components/Footer"
 
         <RecordContainer>
           <h1 className="hidden">Valores referentes ao mês de {month}</h1>
-          <div> 
+          <div className="inputs-enters-exit"> 
             <p className="text-primary">Entradas</p>
 
             <InputContainer>
@@ -110,7 +110,7 @@ import Footer from "../../Components/Footer"
               </InfoContainer>
             </InputContainer>
           </div>
-          <div>
+          <div className="inputs-enters-exit">
             <p className="text-primary">Saídas</p>
             <ExitContainer>
               {outgress.map((item, index) => {
@@ -139,9 +139,11 @@ import Footer from "../../Components/Footer"
           </div>
         </RecordContainer>
       </Container>
-      <Footer/>
-    </>
+      <Footer />
+    </GeneralContainer>
+
   );
 };
 
 export default Monthly;
+  

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const GeneralContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+`
 export const Container = styled.div`
   margin-top: 20px;
   margin-bottom: 10px;
@@ -10,19 +16,27 @@ export const Container = styled.div`
   .hidden {
     display: none;
   }
-  @media (min-width: 700px) {
-    flex-direction: row-reverse;
-  }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: flex-start;
+  }
+   
+
+  .inputs-enters-exit{
+    @media (max-width: 799px){
+      margin: 0;
+      width: 100%;
+      display:flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
 export const LaunchContainer = styled.div`
   width: 80%;
-  max-width: 430px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,8 +56,8 @@ export const LaunchContainer = styled.div`
     font-size: 16px;
     margin-bottom: 50px;
   }
-  @media (min-width: 550px) {
-    max-width: 500px;
+  @media (max-width: 799px) {
+    width: 80%;
   }
   @media (min-width: 1200px) {
     width: 30%;
@@ -97,10 +111,10 @@ export const InputContainer = styled.div`
     width: 80%;
     margin: 20px 0;
   }
-  /* @media (min-width: 450px) {
+  @media (min-width: 768px) {
     width: 80%;
-  } */
-  @media (min-width: 1200px) {
+  }
+  @media (min-width: 800px) {
     width: 380px;
     margin-right: 20px;
   }
@@ -123,7 +137,7 @@ export const ExitContainer = styled.div`
   @media (min-width: 700px) {
     width: 100%;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     width: 380px;
   }
 `;
