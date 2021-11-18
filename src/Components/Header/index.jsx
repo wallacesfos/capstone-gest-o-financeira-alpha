@@ -100,7 +100,6 @@ export const Header = () => {
       </div>
 
       <div className="navbar-final">
-        <img src={LampIcon} alt="Lampada" />
         <p>Olá, {`${localStorage.getItem("@name_alpha") || ""}`}!</p>
         <div className="dropdown-perfil">
           <img

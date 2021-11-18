@@ -151,6 +151,18 @@ const GlobalStyled = createGlobalStyle`
       border-radius: 100px;
     }
 
+    .notFound{
+        width: 100vw;
+        height: 100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Notfound-image{
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 export default GlobalStyled;

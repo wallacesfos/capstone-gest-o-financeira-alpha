@@ -3,7 +3,6 @@ import { Header } from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import { UserContainer, InfoContainer, InfoDiv, ContainerPage, InfoDivs, Container} from "./styles";
 import PersonNav from "../../Assets/Icons/PersonNav.png";
-import { AccountCircle } from "@material-ui/icons";
 import { Input, Button } from "@material-ui/core";
 
 export const UserPage = () => {
