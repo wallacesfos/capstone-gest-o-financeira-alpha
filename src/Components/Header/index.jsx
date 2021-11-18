@@ -27,6 +27,11 @@ export const Header = () => {
   const { Logout } = useContext(AuthContext);
   const Images = localStorage.getItem('@image_alpha')
 
+
+  if(!localStorage.getItem('@token_alpha')){
+    history.push('/')
+  }
+
   return (
     <Navbar>
       <div className="logo" style={{ cursor: "pointer" }}>
