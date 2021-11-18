@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
 
             //id
             localStorage.setItem("@id_alpha", response.data.user.id);
+            localStorage.setItem("@name_alpha", response.data.user.name);
+
 
 
             //Setting token in AuthToken

@@ -1,5 +1,7 @@
 import React from 'react'
 import './style.css'
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+
 
 
 export const Header = () => {
@@ -7,19 +9,26 @@ export const Header = () => {
   
 
   return(
-    <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <div class="offcanvas-header">  
-          <button class="btn-close float-end"></button>
-        </div>
-        <a class="navbar-brand" href="#">Brand</a>
-        <ul class="navbar-nav">
-            <li class="nav-item active"> <a class="nav-link" href="#">Home </a> </li>
-            <li class="nav-item"><a class="nav-link" href="#"> About </a></li>
-            <li class="nav-item"><a class="nav-link" href="#"> Services </a></li>
-        </ul>
-      </div>
-    </nav>
-
+    <Navbar className="navbrand" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">
+          
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 };
