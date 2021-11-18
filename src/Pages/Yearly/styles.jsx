@@ -20,7 +20,7 @@ export const Card = styled.div`
 export const Main = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 95%;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -29,11 +29,12 @@ export const Main = styled.div`
 `;
 
 export const Text = styled.div`
-  padding: 110px 10px 0 10px;
+  padding: 50px 10px 0 10px;
   margin-bottom: 20px;
   font-family: Arial;
-  width: 100%;
-  padding-left: 5%;
+  width: 95%;
+  margin: 0 auto;
+  
   .Moviments-text {
     color: #3498db;
   }
@@ -45,7 +46,8 @@ export const Text = styled.div`
 
 export const CategoryDiv = styled.div`
   display: flex;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   justify-content: space-around;
   padding: 0 calc(1.5rem / 2);
   > p {

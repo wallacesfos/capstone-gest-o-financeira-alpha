@@ -9,32 +9,42 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     border-radius: 15px;
-    padding: 10px;
-    flex-wrap: wrap;
-    min-height: 80px;
+    padding: 3px;
+    flex-wrap: nowrap;
+    min-height: 80px;    
 
-    
+    img {
+        margin-right: 5px;
+    }
 
     @media(max-width: 768px){
         flex-direction: column;
-        flex-wrap: nowrap;
+
+
+        img {
+        margin: 5px 0px;
+    }
     }
 `
 
-export const Separator = styled.div`
+export const Separator = styled.div` 
+    width: 80%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+   
+    p {
+        text-align: center;
 
-    img{
-        margin-right: 10px;
+    }
+
+    .title {
+        margin-right: 5px;
     }
 
     @media(max-width: 768px){
         flex-direction: column;
-        flex-wrap: nowrap;
-
     }
 
 

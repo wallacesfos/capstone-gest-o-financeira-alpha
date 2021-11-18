@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const MonthlyCardContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   padding: 0 calc(1.5rem / 2);
   justify-content: space-around;
   @media (max-width: 1024px) {
     background-color: #222a39;
-    width: 100%;
+    width: 95%;
     display: flex;
     height: 100%;
     align-items: center;
