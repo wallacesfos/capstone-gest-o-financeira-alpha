@@ -30,7 +30,7 @@ export const UserPage = () => {
 
   const setPersons = () => {
     localStorage.setItem("@person_alpha", addImage)
-    setPersonType(addPerson)
+    setPersonType(addPerson) 
   }
 
   return (
