@@ -116,6 +116,8 @@ export const InputContainer = styled.div`
   }
   @media (min-width: 800px) {
     width: 380px;
+  }
+  @media (min-width: 1200px) {
     margin-right: 20px;
   }
 `;
