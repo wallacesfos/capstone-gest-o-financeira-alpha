@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const GeneralContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,7 +41,7 @@ export const Text = styled.div`
   font-family: Arial;
   width: 95%;
   margin: 0 auto;
-  
+
   .Moviments-text {
     color: #3498db;
   }
