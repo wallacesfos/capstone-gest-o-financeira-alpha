@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { FinanceContext } from "../../Providers/Finances";
 import { Header } from "../../Components/Header";
 import { useParams } from "react-router";
+import Footer from "../../Components/Footer"
 
   const Monthly = () => {
 
@@ -138,6 +139,7 @@ import { useParams } from "react-router";
           </div>
         </RecordContainer>
       </Container>
+      <Footer/>
     </>
   );
 };
