@@ -34,8 +34,48 @@ export const Header = () => {
 
       <div className="navbar-links">
         <ul>
-          <li onClick={() => history.push("/monthly")}>
-            <img src={MensalIcon} alt="Icon mensal" /> Mensal
+          <li>
+            <div className="dropdown-perfil">
+              <img
+                src={MensalIcon}
+                alt="Icon mensal"
+                style={{ height: "20px", width: "20px" }}
+              />{" "}
+              Mensal
+              <div
+                className="dropdown-content-perfil"
+                style={{ borderRadius: "20px", border: "1px solid black" }}
+              >
+                <ul className="dropdown-content-list-perfil">
+                  <li onClick={() => history.push("/monthly/janeiro")}>
+                    Janeiro
+                  </li>
+                  <li onClick={() => history.push("/monthly/fevereiro")}>
+                    Fevereiro
+                  </li>
+                  <li onClick={() => history.push("/monthly/março")}>Março</li>
+                  <li onClick={() => history.push("/monthly/abril")}>Abril</li>
+                  <li onClick={() => history.push("/monthly/maio")}>Maio</li>
+                  <li onClick={() => history.push("/monthly/junho")}>Junho</li>
+                  <li onClick={() => history.push("/monthly/julho")}>Julho</li>
+                  <li onClick={() => history.push("/monthly/agosto")}>
+                    Agosto
+                  </li>
+                  <li onClick={() => history.push("/monthly/setembro")}>
+                    Setembro
+                  </li>
+                  <li onClick={() => history.push("/monthly/outubro")}>
+                    Outubro
+                  </li>
+                  <li onClick={() => history.push("/monthly/novembro")}>
+                    Novembro
+                  </li>
+                  <li onClick={() => history.push("/monthly/dezembro")}>
+                    Dezembro
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li onClick={() => history.push("/yearly")}>
             <img src={AnualIcon} alt="Icon mensal" /> Anual
@@ -53,8 +93,11 @@ export const Header = () => {
         <img src={LampIcon} alt="Lampada" />
         <p>Olá, User!</p>
         <div className="dropdown-perfil">
-          <img src={PersonNav} alt="Person"/>
-          <div className="dropdown-content-perfil">
+          <img src={PersonNav} alt="Person" />
+          <div
+            className="dropdown-content-perfil"
+            style={{ borderRadius: "20px", border: "1px solid black" }}
+          >
             <ul className="dropdown-content-list-perfil">
               <li onClick={() => history.push("/user")}>Perfil</li>
               <li
@@ -92,7 +135,12 @@ export const Header = () => {
                 <ListItemText className="dropMobile" primary="Mensal" />
                 {open ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit className="teste">
+              <Collapse
+                in={open}
+                timeout="auto"
+                unmountOnExit
+                className="teste"
+              >
                 <List component="div" disablePadding>
                   <ul className="ulMobile">
                     <li onClick={() => history.push("/monthly/janeiro")}>
