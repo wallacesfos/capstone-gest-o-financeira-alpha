@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import List from "@mui/material/List";
 
 export const Navbar = styled.nav`
   width: 100%;
@@ -77,12 +76,13 @@ export const Navbar = styled.nav`
       padding: 0;
     }
 
-    ul .MuiCollapse-wrapperInner div{
+    ul .MuiCollapse-wrapperInner div {
       border-bottom: none;
       margin-bottom: 0;
     }
 
-    .dashMobile, .dropMobile span {
+    .dashMobile,
+    .dropMobile span {
       font-size: 20px;
       padding-left: 10px;
       margin-bottom: 15px;
@@ -95,7 +95,6 @@ export const Navbar = styled.nav`
     .dropMobile span {
       border-bottom: none;
     }
-
 
     .ulMobile {
       font-size: 20px;
@@ -237,4 +236,3 @@ export const Navbar = styled.nav`
     cursor: pointer;
   }
 `;
-
