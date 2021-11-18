@@ -73,7 +73,7 @@ import Footer from "../../Components/Footer";
                 <FormControlLabel value="saida" control={<Radio />} label="Saída" />
               </RadioGroup>
 
-              <TextField inputProps={{ maxLength: 12 }} className="inputs-register month" label="Categoria" variant="standard" onChange={e => setCategory(e.target.value)}></TextField>
+              <TextField inputProps={{ maxLength: 12}} className="inputs-register month" label="Categoria" variant="standard" onChange={e => setCategory(e.target.value)}></TextField>
               <TextField inputProps={{ maxLength: 50 }} className="inputs-register month" label="Descrição" variant="standard" onChange={e => setDescription(e.target.value)}></TextField>
               <TextField className="inputs-register month" label="Valor" variant="standard" type="number" onChange={e => setValues(e.target.valueAsNumber)}></TextField>
               <button onClick={handleForm}>Adicionar</button>
