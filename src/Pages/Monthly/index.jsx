@@ -141,6 +141,7 @@ import Footer from "../../Components/Footer";
       </Container>
       <Footer />
     </GeneralContainer>
+
   );
 };
 
