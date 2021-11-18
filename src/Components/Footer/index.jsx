@@ -10,6 +10,30 @@ import {useHistory} from 'react-router-dom';
 const Footer = () => {
   const history = useHistory()
 
+const Footer = () => {
+
+  const history = useHistory();
+
+  const getMonth = () => {
+    const months = [
+      "janeiro",
+      "fevereiro",
+      "marco",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro",
+    ];
+
+    const d = new Date();
+    return months[d.getMonth()];
+  };
+
   return (
     <Container>
       <LogoContainer className="hidden">
@@ -30,11 +54,12 @@ const Footer = () => {
           <p className="hidden">Mensal</p>
         </li>
         <li onClick={() => history.push("/yearly")} className="pointer">
+
         <img src={AnualIcon} alt="Icon mensal" className="icon"/>
           <p className="hidden">Anual</p>
         </li>
       </ListContainer>
-      <p className="hidden">Termos de uso</p>
+      <p className="hidden pointer" onClick={() => history.push("/about-us")} > Sobre Nós</p>
     </Container>
   );
 };

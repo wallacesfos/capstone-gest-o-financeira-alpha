@@ -10,7 +10,6 @@ import { YearlyDashboard } from "../Pages/Yearly";
 import Dashboard from "../Pages/Dashboard";
 import Finances from "../Pages/Finances";
 
-
 const Routes = () => {
   return (
     <Switch>
