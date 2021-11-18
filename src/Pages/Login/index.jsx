@@ -30,12 +30,10 @@ export default function Login() {
       email: email,
       password: senha,
     };
-    console.log(formData);
 
-    await signIn(formData)
-    
+    await signIn(formData);
 
-    localStorage.getItem('@token_alpha') && history.push('/monthly')
+    localStorage.getItem("@token_alpha") && history.push("/dashboard");
   };
 
   return (

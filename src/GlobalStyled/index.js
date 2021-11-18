@@ -136,7 +136,7 @@ const GlobalStyled = createGlobalStyle`
     .text-title-center{
         font-family: Arial, Helvetica, sans-serif;
         width: 100%;
-        margin-left: 5%;
+        padding-left: 5%;
         margin-bottom: 20px;
         
     }
