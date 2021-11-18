@@ -19,6 +19,11 @@ import { useHistory } from "react-router";
 
 export default function Login() {
   const history = useHistory();
+  if (!localStorage.getItem("@token_alpha")) {
+    history.push("/");
+  } else {
+    history.push("/dashboard");
+  }
 
   const { signIn } = useContext(AuthContext);
 

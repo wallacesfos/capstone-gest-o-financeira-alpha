@@ -25,11 +25,10 @@ export const Header = () => {
 
   const history = useHistory();
   const { Logout } = useContext(AuthContext);
-  const Images = localStorage.getItem('@image_alpha')
+  const Images = localStorage.getItem("@image_alpha");
 
-
-  if(!localStorage.getItem('@token_alpha')){
-    history.push('/')
+  if (!localStorage.getItem("@token_alpha")) {
+    history.push("/");
   }
 
   return (
@@ -104,7 +103,11 @@ export const Header = () => {
         <img src={LampIcon} alt="Lampada" />
         <p>Olá, {`${localStorage.getItem("@name_alpha") || ""}`}!</p>
         <div className="dropdown-perfil">
-          <img src={Images || PersonNav} alt="Person" className="image-profile navbar-image"/>
+          <img
+            src={Images || PersonNav}
+            alt="Person"
+            className="image-profile navbar-image"
+          />
           <div className="dropdown-content-perfil">
             <ul className="dropdown-content-list-perfil">
               <li onClick={() => history.push("/user")}>Perfil</li>
