@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Container, Card, Main, Text, CategoryDiv, GeneralContainer } from "./styles.jsx";
+import {
+  Container,
+  Card,
+  Main,
+  Text,
+  CategoryDiv,
+  GeneralContainer,
+} from "./styles.jsx";
 import { Header } from "../../Components/Header";
 import CardMovement from "../../Components/CardMovement/index.jsx";
 import Movement from "../../Assets/Icons/Movement.png";
@@ -15,7 +22,6 @@ export const YearlyDashboard = () => {
   useEffect(() => {
     handleFinance();
   }, []);
-  console.log(finances);
   const getMonthlyFinance = (month, type) => {
     const currentMonth = finances
       .filter((value) => value.month === month && value.type === type)
@@ -56,7 +62,7 @@ export const YearlyDashboard = () => {
   };
   return (
     <GeneralContainer>
-        <Header />
+      <Header />
       <Container>
         <Text>
           <h3>Média de valor movimentados do ano de 2021</h3>
@@ -250,7 +256,7 @@ export const YearlyDashboard = () => {
         />
         <div className="Footer-Empurrer"></div>
       </Container>
-        <Footer />
+      <Footer />
     </GeneralContainer>
   );
 };

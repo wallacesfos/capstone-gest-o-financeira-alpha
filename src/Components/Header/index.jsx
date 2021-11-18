@@ -28,8 +28,13 @@ export const Header = () => {
 
   return (
     <Navbar>
-      <div className="logo">
-        <img src={Logo} alt="Alpha logo" className="Logo-Header" />
+      <div className="logo" style={{ cursor: "pointer" }}>
+        <img
+          src={Logo}
+          alt="Alpha logo"
+          className="Logo-Header"
+          onClick={() => history.push("/dashboard")}
+        />
       </div>
 
       <div className="navbar-links">
@@ -91,7 +96,7 @@ export const Header = () => {
 
       <div className="navbar-final">
         <img src={LampIcon} alt="Lampada" />
-        <p>Olá, User!</p>
+        <p>Olá, {`${localStorage.getItem("@name_alpha") || ""}`}!</p>
         <div className="dropdown-perfil">
           <img src={PersonNav} alt="Person" />
           <div

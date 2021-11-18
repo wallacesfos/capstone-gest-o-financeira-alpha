@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { Container, Card, Main, Graphics, Text, GeneralContainer } from "./style.js";
+import {
+  Container,
+  Card,
+  Main,
+  Graphics,
+  Text,
+  GeneralContainer,
+} from "./style.js";
 import { Header } from "../../Components/Header";
 import CardMovement from "../../Components/CardMovement/index.jsx";
 import Movement from "../../Assets/Icons/Movement.png";
@@ -30,7 +37,6 @@ export default function Analise() {
       .reduce((a, b) => a + b.value, 0);
   };
 
-  console.log(finances);
   const State = {
     options: {
       chart: {
