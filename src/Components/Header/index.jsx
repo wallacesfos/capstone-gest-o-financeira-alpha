@@ -44,7 +44,7 @@ export const Header = () => {
             <img src={AnalysisIcon} alt="Icon mensal" /> Análise
           </li>
           <li onClick={() => history.push("/finance")}>
-            <img src={FinancesIcon} alt="Icon mensal" /> Financias
+            <img src={FinancesIcon} alt="Icon mensal" /> Finanças
           </li>
         </ul>
       </div>

@@ -4,6 +4,10 @@ import LogoFooter from "../../Assets/logo_footer.png";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { IoMdAnalytics } from "react-icons/io";
 import { RiBookletLine, RiCalendarLine } from "react-icons/ri";
+import MensalIcon from "../../Assets/Icons/Mensal.png";
+import AnualIcon from "../../Assets/Icons/Anual.png";
+import AnalysisIcon from "../../Assets/Icons/Analysis.png";
+import FinancesIcon from "../../Assets/Icons/Finances.png";
 
 const Footer = () => {
   return (
@@ -14,19 +18,19 @@ const Footer = () => {
       </LogoContainer>
       <ListContainer className="hiddenList">
         <li>
-          <FaMoneyBillWave className="icon" />
+           <img src={FinancesIcon} alt="Icon mensal" className="icon"/> 
           <p className="hidden">Finanças</p>
         </li>
         <li>
-          <IoMdAnalytics className="icon" />
+          <img src={AnalysisIcon} alt="Icon mensal" className="icon"/> 
           <p className="hidden">Análise</p>
         </li>
         <li>
-          <RiBookletLine className="icon" />
+          <img src={MensalIcon} alt="Icon mensal" className="icon"/>
           <p className="hidden">Mensal</p>
         </li>
         <li>
-          <RiCalendarLine className="icon" />
+        <img src={AnualIcon} alt="Icon mensal" className="icon"/>
           <p className="hidden">Anual</p>
         </li>
       </ListContainer>

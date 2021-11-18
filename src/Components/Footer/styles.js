@@ -13,7 +13,7 @@ export const Container = styled.div`
   background: var(--darkDesaturatedBlue);
 
   .icon {
-    font-size: 40px;
+    width: 30px;
     margin: 10px 0;
   }
 
@@ -92,10 +92,12 @@ export const ListContainer = styled.div`
 
   @media (min-width: 900px) {
     width: 400px;
+    flex-direction: row;
   }
 
   @media (min-width: 1200px) {
     width: 500px;
     justify-content: space-between;
+    flex-direction: row;
   }
 `;
