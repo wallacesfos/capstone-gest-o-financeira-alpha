@@ -25,6 +25,7 @@ export const Header = () => {
 
   const history = useHistory();
   const { Logout } = useContext(AuthContext);
+  const Images = localStorage.getItem('@image_alpha')
 
   return (
     <Navbar>
@@ -53,7 +54,7 @@ export const Header = () => {
         <img src={LampIcon} alt="Lampada" />
         <p>Olá, User!</p>
         <div className="dropdown-perfil">
-          <img src={PersonNav} alt="Person"/>
+          <img src={Images || PersonNav} alt="Person" className="image-profile navbar-image"/>
           <div className="dropdown-content-perfil">
             <ul className="dropdown-content-list-perfil">
               <li onClick={() => history.push("/user")}>Perfil</li>

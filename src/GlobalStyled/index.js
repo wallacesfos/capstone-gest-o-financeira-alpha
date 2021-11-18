@@ -140,6 +140,16 @@ const GlobalStyled = createGlobalStyle`
         margin-bottom: 20px;
         
     }
+.image-profile{
+    height: 80px;
+    border-radius: 100px;
+  }
+
+    .navbar-image{
+      height: 40px !important;
+      width: 40px;
+      border-radius: 100px;
+    }
 
 `;
 
