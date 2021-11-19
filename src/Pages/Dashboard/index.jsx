@@ -63,7 +63,7 @@ export default function Dashboard() {
 
             <div className="informations-card">
               <h4 className="text-primary">Anual</h4>
-              <p>Lista com todos os valores detalhados do ano todo</p>
+              <p>Lista com valores detalhados do ano todo</p>
               <div>
                 <button
                   className="btn-primary btn-card"
@@ -83,7 +83,7 @@ export default function Dashboard() {
 
             <div className="informations-card">
               <h4 className="text-primary">Análise</h4>
-              <p>Veja todas as entradas e saídas de um mês específico</p>
+              <p>Veja o gráfico de todas as entradas e saídas</p>
               <div>
                 <button
                   className="btn-primary btn-card"
@@ -115,7 +115,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
+      <br />
       <Footer />
     </Container>
   );
