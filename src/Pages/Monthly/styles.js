@@ -8,7 +8,7 @@ export const GeneralContainer = styled.div`
 `
 export const Container = styled.div`
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
