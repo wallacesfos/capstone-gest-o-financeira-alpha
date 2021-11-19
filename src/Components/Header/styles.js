@@ -35,7 +35,7 @@ export const Navbar = styled.nav`
   }
 
   .navbar-final {
-    width: 220px;
+    width: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -100,7 +100,6 @@ export const Header = () => {
       </div>
 
       <div className="navbar-final">
-        <img src={LampIcon} alt="Lampada" />
         <p>Olá, {`${localStorage.getItem("@name_alpha") || ""}`}!</p>
         <div className="dropdown-perfil">
           <img
@@ -108,7 +107,10 @@ export const Header = () => {
             alt="Person"
             className="image-profile navbar-image"
           />
-          <div className="dropdown-content-perfil">
+          <div
+            className="dropdown-content-perfil"
+            style={{ borderRadius: "20px", border: "1px solid black" }}
+          >
             <ul className="dropdown-content-list-perfil">
               <li onClick={() => history.push("/user")}>Perfil</li>
               <li
@@ -207,7 +209,10 @@ export const Header = () => {
             <li className="dashMobile" onClick={() => history.push("/user")}>
               Usuário
             </li>
-            <li className="dashMobile" onClick={() => history.push("/about-us")}>
+            <li
+              className="dashMobile"
+              onClick={() => history.push("/about-us")}
+            >
               Sobre Nós
             </li>
             <li
