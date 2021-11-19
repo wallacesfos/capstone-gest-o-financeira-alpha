@@ -8,6 +8,7 @@ import { UserPage } from "../Pages/UserPage";
 import { YearlyDashboard } from "../Pages/Yearly";
 import Dashboard from "../Pages/Dashboard";
 import AboutUs from "../Pages/AboutUs";
+import { Finance } from "../Pages/Finance";
 
 const Routes = () => {
   return (
@@ -21,7 +22,9 @@ const Routes = () => {
       <Route path="/dashboard">
         <Dashboard />
       </Route>
-      <Route path="/finance">Finanças</Route>
+      <Route path="/finance">
+        <Finance />
+      </Route>
       <Route path="/analysis">
         <Analise />
       </Route>
