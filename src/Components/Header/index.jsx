@@ -207,6 +207,9 @@ export const Header = () => {
             <li className="dashMobile" onClick={() => history.push("/user")}>
               Usuário
             </li>
+            <li className="dashMobile" onClick={() => history.push("/about-us")}>
+              Sobre Nós
+            </li>
             <li
               className="dashMobile"
               onClick={() => {

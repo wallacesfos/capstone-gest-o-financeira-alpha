@@ -7,6 +7,7 @@ import SignUp from "../Pages/SignUp";
 import { UserPage } from "../Pages/UserPage";
 import { YearlyDashboard } from "../Pages/Yearly";
 import Dashboard from "../Pages/Dashboard";
+import AboutUs from "../Pages/AboutUs";
 
 const Routes = () => {
   return (
@@ -32,6 +33,9 @@ const Routes = () => {
       </Route>
       <Route path="/user">
         <UserPage />
+      </Route>
+      <Route path="/about-us">
+        <AboutUs />
       </Route>
     </Switch>
   );
