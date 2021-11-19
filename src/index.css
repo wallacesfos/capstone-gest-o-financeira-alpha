@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, heveltica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+}
+
+code {
+  font-family: Arial, heveltica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: white;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #222A39;    /* color of the scroll thumb */
+  border-radius: 0;       /* roundness of the scroll thumb */
+  border: 0px solid white;  /* creates padding around scroll thumb */
+}
