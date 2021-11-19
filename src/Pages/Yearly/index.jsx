@@ -57,7 +57,7 @@ export const YearlyDashboard = () => {
 
     return (
       (currentMonthExits.reduce((a, b) => a + b.value, 0) / totalMovement) *
-      100
+      100 || 0 
     ).toFixed(2);
   };
   return (
@@ -131,7 +131,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("janeiro", "Entrada") -
             getMonthlyFinance("janeiro", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("janeiro")}
         />
         <MonthlyCards
           month="Fevereiro"
@@ -142,7 +142,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("fevereiro", "Entrada") -
             getMonthlyFinance("fevereiro", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("fevereiro")}
         />
         <MonthlyCards
           month="Março"
@@ -153,7 +153,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("março", "Entrada") -
             getMonthlyFinance("março", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("março")}
         />
         <MonthlyCards
           month="Abril"
@@ -164,7 +164,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("abril", "Entrada") -
             getMonthlyFinance("abril", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("abril")}
         />
         <MonthlyCards
           month="Maio"
@@ -175,7 +175,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("maio", "Entrada") -
             getMonthlyFinance("maio", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("maio")}
         />
         <MonthlyCards
           month="Junho"
@@ -186,7 +186,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("junho", "Entrada") -
             getMonthlyFinance("junho", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("junho")}
         />
         <MonthlyCards
           month="Julho"
@@ -197,7 +197,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("julho", "Entrada") -
             getMonthlyFinance("julho", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("julho")}
         />
         <MonthlyCards
           month="Agosto"
@@ -208,7 +208,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("agosto", "Entrada") -
             getMonthlyFinance("agosto", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("agosto")}
         />
         <MonthlyCards
           month="Setembro"
@@ -219,7 +219,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("setembro", "Entrada") -
             getMonthlyFinance("setembro", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("setembro")}
         />
         <MonthlyCards
           month="Outubro"
@@ -230,7 +230,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("outubro", "Entrada") -
             getMonthlyFinance("outubro", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("outubro")}
         />
         <MonthlyCards
           month="Novembro"
@@ -252,7 +252,7 @@ export const YearlyDashboard = () => {
             getMonthlyFinance("dezembro", "Entrada") -
             getMonthlyFinance("dezembro", "saida")
           }
-          percentage={0}
+          percentage={getPercentage("dezembro")}
         />
         <div className="Footer-Empurrer"></div>
       </Container>

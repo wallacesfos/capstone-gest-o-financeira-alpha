@@ -61,7 +61,7 @@ import Footer from "../../Components/Footer";
       <Container>
           <LaunchContainer>
             <p className="info">Adicione suas finanças do mês</p>
-            <p className="description">Super fáciel, preencha o formulário</p>
+            <p className="description">Super fácil, preencha o formulário</p>
 
             <FormContainer onSubmit={handleForm}>
               <RadioGroup row aria-label="gender" onChange={e => setTypes(e.target.value)}>

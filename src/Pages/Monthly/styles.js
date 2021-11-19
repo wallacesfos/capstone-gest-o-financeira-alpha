@@ -32,6 +32,10 @@ export const Container = styled.div`
       flex-direction: column;
       align-items: center;
     }
+
+    @media (min-width: 1200px) {
+      margin-right: 20px;
+    }
   }
 `;
 
